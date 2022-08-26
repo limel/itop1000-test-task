@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import s from "./App.module.css";
+import CurrencyRate from "./components/CurrencyRate";
+import Convertor from "./components/Convertor";
+import { fetchCurrencies } from "./api/fetchCurrency.js";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [currency, setCurrency] = useState(null);
+
+  useEffect(() => {
+    async function getCurrency() {
+      try {
+        setCurrency(await fetchCurrencies("USD, EUR", "UAH"));
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    getCurrency();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className={s.container}>
+        {currency && <CurrencyRate eur={currency.results.EUR} usd={currency.results.USD} />}
       </header>
+      <Convertor />
     </div>
   );
 }

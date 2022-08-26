@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+  padding: 20px 0;
+  margin: 0;
+}
+
+.item {
+  font-size: 24px;
+  font-weight: 600;
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
+}

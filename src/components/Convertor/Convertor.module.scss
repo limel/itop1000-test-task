@@ -1,0 +1,12 @@
+.container {
+  composes: container from global;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+
+  @media screen and (max-width: 768px) {
+    gap: 20px;
+    flex-direction: column;
+  }
+}

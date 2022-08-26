@@ -1,0 +1,11 @@
+.container {
+  composes: container from global;
+  position: sticky;
+  top: 0;
+  background-color: #000;
+  box-shadow: 5px 5px 0px 0px #289fed, 10px 10px 0px 0px #5fb8ff, 15px 15px 0px 0px #a1d8ff, 20px 20px 0px 0px #cae6ff,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  color: #fff;
+  margin-bottom: 50px;
+  z-index: 3;
+}
