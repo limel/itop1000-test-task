@@ -24,7 +24,7 @@ export default function CurrencyRow({ amount, onChangeAmount, onChangeOptions, c
     <div className={s.wrapper} ref={ref}>
       <label className={s.input}>
         <span>{currentCurrency ?? "."}</span>
-        <input type="number" className={s.input} value={amount ? amount : 0} onChange={onChangeAmount} />
+        <input type="number" className={s.input} value={amount} onChange={onChangeAmount} />
       </label>
 
       <div className={active ? `${s.dropdown} ${s.dropdown_active}` : `${s.dropdown}`}>
